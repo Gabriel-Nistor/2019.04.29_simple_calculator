@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    
+    </head>
+
+<body>
+    <div class="body-calculator">
+            <h1>Calculator</h1>
+            <p class="first-second-restult-text">First number:</p>
+            <input id="first-number">
+            <p class="first-second-restult-text">Second number:</p>
+            <input id="second-number">
+            <br><br>
+            <button id="add">+</button>
+            <button id="minus">-</button>
+            <button id="times">*</button>
+            <button id="divide">/</button>
+
+            <p class="first-second-restult-text">Result:</p>
+            <input id="show-result">
+    </div>
+</body>
+</html>
+
+<script>
+    var firstNumber = document.getElementById("first-number");
+    var secondNumber = document.getElementById("second-number");
+    var buttonAdd = document.getElementById("add");
+    var buttonMinus = document.getElementById("minus");
+    var buttonTimes = document.getElementById("times");
+    var buttonDivide = document.getElementById("divide");
+    var showResult = document.getElementById("show-result");
+
+    function addNumbers(a, b){
+              return a + b 
+            }
+
+    function minusNumbers(a, b){
+                return a - b
+             }
+
+    function timesNumbers(a, b){
+                return a * b
+             }
+
+    function divideNumbers(a, b){
+                return a / b
+             }
+    
+
+    function addingNumbersToShowResult(){
+        showResult.value = addNumbers(parseInt(firstNumber.value), parseInt(secondNumber.value));
+    }
+
+    buttonAdd.addEventListener("click" , addingNumbersToShowResult);
+
+    function minusNumbersToShowResult(){
+        showResult.value = minusNumbers(parseInt(firstNumber.value), parseInt(secondNumber.value));
+    }
+
+    buttonMinus.addEventListener("click" , minusNumbersToShowResult);
+
+    function timesNumbersToShowResult(){
+        showResult.value = timesNumbers(parseInt(firstNumber.value), parseInt(secondNumber.value));
+    }
+
+    buttonTimes.addEventListener("click" , timesNumbersToShowResult);
+
+    function divideNumbersToShowResult(){
+        showResult.value = divideNumbers(parseInt(firstNumber.value), parseInt(secondNumber.value));
+    }
+
+    buttonDivide.addEventListener("click" , divideNumbersToShowResult);
+
+
+</script>
+
+<style>
+    .body-calculator { 
+        width: 400px;
+        height: 400px;
+        border: solid black 2px; 
+        background: rgb(142, 158, 177);
+
+    }
+
+    .first-second-restult-text {
+        font-size: 1.2em;
+        color: rgb(5, 20, 15);
+    }
+
+</style>
+
+
+
+
